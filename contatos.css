@@ -1,0 +1,172 @@
+* {
+  font-family: Quicksand, Arial;
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: url(Imagens/Contatos_Background.png) no-repeat center center fixed;
+  background-size: cover;
+  color: #000;
+}
+
+.vignet {
+  position: relative;
+  flex: 1;
+}
+
+.vignet::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.container {
+  flex: 1;
+  background-color: transparent;
+  width: 100%;
+  max-width: 870px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  margin-top: 30%;
+  padding-bottom: 30px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.highlight {
+  color: #783aff;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas fixas */
+  gap: 1rem; /* Espaçamento entre os cards */
+  justify-items: center; /* Centraliza os cards nas colunas */
+}
+
+@media (max-width: 768px) {
+  .cards {
+      grid-template-columns: 1fr;
+  }
+}
+
+.cards img {
+  width: 50px;
+  height: 50px;
+}
+
+.card {
+  width: 100%;
+  max-width: 410px;
+  background-color: rgba(255, 255, 255, 0.39);
+  padding: 1rem 1rem 2.3rem 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  position: relative;
+  cursor: pointer;
+  transition: box-shadow 0.08s ease-in-out, transform 0.08s ease-in-out;
+  min-height: 100px;
+  backdrop-filter: blur(13.4px);
+  -webkit-backdrop-filter: blur(13.4px);
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.01);
+}
+
+.card:active {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1);
+  background-color: rgba(248, 248, 248, 0.562);
+}
+
+.card h2 {
+  padding-top: 12px;
+  font-size: 1rem;
+}
+
+.card p {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #3f3f3f;
+}
+
+.icon-container {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.icon-default, .icon-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.icon-hover {
+  opacity: 0;
+}
+
+.card:hover .icon-hover {
+  opacity: 1;
+}
+
+.card:hover .icon-default {
+  opacity: 0;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 1.2rem;
+  right: 1.2rem;
+  background: #ddd;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+
+.arrow:hover {
+  background: #ccc;
+  color: #7a42f4;
+  transform: scale(1.05);
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.87);
+  backdrop-filter: blur(13.4px);
+  -webkit-backdrop-filter: blur(13.4px);
+  color: #cecece;
+}
