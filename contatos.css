@@ -18,7 +18,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: url(Imagens/Contatos_Background.png) no-repeat center center fixed;
+  background: url(Imagens/Contatos_Background.png) no-repeat center fixed;
   background-size: cover;
   color: #000;
 }
